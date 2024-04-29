@@ -8,11 +8,7 @@ function App() {
 
   useEffect(() => {
     const unsubscribe = taskRepo
-      .liveQuery({
-        where: {
-          deleted: false,
-        },
-      })
+      .liveQuery()
       .subscribe((info) => setTasks(info.applyChanges));
 
     return () => {
@@ -23,6 +19,14 @@ function App() {
   const handleTaskChange = async (newTask: Task) => {
     try {
       await taskRepo.save(newTask);
+    } catch (e) {
+      alert("Error updating task");
+    }
+  };
+
+  const handleTaskDelete = async (newTask: Task) => {
+    try {
+      await taskRepo.delete(newTask);
     } catch (e) {
       alert("Error updating task");
     }
@@ -43,6 +47,7 @@ function App() {
               key={task.id}
               task={task}
               onTaskChange={handleTaskChange}
+              onTaskDelete={handleTaskDelete}
             />
           );
         })}

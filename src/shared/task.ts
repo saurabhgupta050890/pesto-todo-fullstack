@@ -15,11 +15,7 @@ export class Task {
 
   @Fields.integer()
   status = TaskStatusType.TO_DO;
-
-  @Fields.boolean()
-  deleted = false;
 }
-
 
 export enum TaskStatusType {
   TO_DO = 1,
