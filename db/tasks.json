@@ -1,12 +1,5 @@
 [
   {
-    "title": "Bell the cat",
-    "description": "From the famous fable bell the cat is a herculean task",
-    "status": 2,
-    "deleted": false,
-    "id": 1
-  },
-  {
     "title": "Pay the piper",
     "description": "For the sake of children pay the piper his fair share of money",
     "status": 3,
